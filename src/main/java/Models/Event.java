@@ -1,9 +1,7 @@
 package Models;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.List;
 
 public class Event {
 
@@ -42,11 +40,13 @@ public class Event {
 
     }
 
+    public int getDiscountCode() {
 
-
-    public Integer getDiscountCode(Integer mDiscount) {
-
-        return mDiscount;
+        if (mGuests > 10) {
+            return discountCode.get(mDiscount);
+        } else {
+            return 0;
+        }
     }
 
     public int getDinnerCost() {
@@ -65,23 +65,13 @@ public class Event {
     }
 
     public int giveEstimate() {
-        return (this.getDinnerCost() + this.getDrinkCost() + this.getEntertainmentCost() - this.getDiscountCode(mDiscount));
+        return (this.getDinnerCost() + this.getDrinkCost() + this.getEntertainmentCost() - this.getDiscountCode());
     }
 
     public int getGuests() {
+
         return this.mGuests;
     }
 
-    public Integer getmDinnerMenu() {
-        return mDinnerMenu;
-    }
-
-    public Integer getmLibations() {
-        return mLibations;
-    }
-
-    public Integer getmEntertainment() {
-        return mEntertainment;
-    }
 
 }

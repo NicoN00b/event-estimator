@@ -1,8 +1,6 @@
 package Models;
 
 import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -38,8 +36,20 @@ public class EventTest {
     }
 
     @Test
-    public void newEventObjectCreatedCorrectWithAllValues() throws Exception {
+    public void newEventObjectInstantiatesWithAllValues() throws Exception {
         Event newEvent = new Event(1, 1, 1, 1, 0);
+        assertEquals(67, newEvent.giveEstimate());
+    }
+
+    @Test
+    public void newEventObjectInstantiatesWithAllValues_Discount() throws Exception {
+        Event newEvent = new Event(1, 1, 1, 1, 1);
+        assertEquals(17, newEvent.giveEstimate());
+    }
+
+    @Test
+    public void newEventDiscountNotApplicable() throws Exception {
+        Event newEvent = new Event(1, 1, 1, 1, 1);
         assertEquals(67, newEvent.giveEstimate());
     }
 //    @Test
