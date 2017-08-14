@@ -14,9 +14,27 @@ public class EventTest {
     }
 
     @Test
-    public void newEventObjectCreatedCorrectGuests_true() throws Exception {
+    public void newEventObjectCreatedCorrectGuests() throws Exception {
         Event newEvent = new Event(1, 0, 0, 0);
         assertEquals(1, newEvent.getGuests());
+    }
+
+    @Test
+    public void newEventObjectCreatedCorrectDinner() throws Exception {
+        Event newEvent = new Event(1, 1, 0, 0);
+        assertEquals(12, newEvent.getDinnerCost());
+    }
+
+    @Test
+    public void newEventObjectCreatedCorrectLibations() throws Exception {
+        Event newEvent = new Event(1, 0, 1, 0);
+        assertEquals(5, newEvent.getDrinkCost());
+    }
+
+    @Test
+    public void newEventObjectCreatedCorrectEntertainment() throws Exception {
+        Event newEvent = new Event(1, 0, 0, 1);
+        assertEquals(50, newEvent.getEntertainmentCost());
     }
 //    @Test
 //    public void newGuest_returnDinnerChoice() throws Exception {

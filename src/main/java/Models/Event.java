@@ -49,20 +49,23 @@ public class Event {
         return mDiscount;
     }
 
-    public int getDinnerCost(Integer mDinnerMenu) {
+    public int getDinnerCost() {
+
         return this.mGuests*dinnerCost.get(mDinnerMenu);
     }
 
-    public int getDrinkCost(Integer mLibations) {
+    public int getDrinkCost() {
+
         return this.mGuests*drinkCost.get(mLibations);
     }
 
-    public int getEntertainmentCost(Integer mEntertainment) {
+    public int getEntertainmentCost() {
+
         return entertainmentCost.get(mEntertainment);
     }
 
     public int giveEstimate() {
-        return (this.getDinnerCost(mDinnerMenu) + this.getDrinkCost(mLibations) + this.getEntertainmentCost(mEntertainment) - this.getDiscountCode(mDiscount));
+        return (this.getDinnerCost() + this.getDrinkCost() + this.getEntertainmentCost() - this.getDiscountCode(mDiscount));
     }
 
     public int getGuests() {
