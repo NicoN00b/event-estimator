@@ -9,32 +9,38 @@ import static org.junit.Assert.*;
 public class EventTest {
     @Test
     public void newEventObjectCorrectlyCreated_true() throws Exception {
-        Event testEvent = new Event(0, 0, 0, 0 );
+        Event testEvent = new Event(0, 0, 0, 0, 0 );
         assertEquals(true, testEvent instanceof Event);
     }
 
     @Test
     public void newEventObjectCreatedCorrectGuests() throws Exception {
-        Event newEvent = new Event(1, 0, 0, 0);
+        Event newEvent = new Event(1, 0, 0, 0, 0);
         assertEquals(1, newEvent.getGuests());
     }
 
     @Test
     public void newEventObjectCreatedCorrectDinner() throws Exception {
-        Event newEvent = new Event(1, 1, 0, 0);
+        Event newEvent = new Event(1, 1, 0, 0, 0);
         assertEquals(12, newEvent.getDinnerCost());
     }
 
     @Test
     public void newEventObjectCreatedCorrectLibations() throws Exception {
-        Event newEvent = new Event(1, 0, 1, 0);
+        Event newEvent = new Event(1, 0, 1, 0, 0);
         assertEquals(5, newEvent.getDrinkCost());
     }
 
     @Test
     public void newEventObjectCreatedCorrectEntertainment() throws Exception {
-        Event newEvent = new Event(1, 0, 0, 1);
+        Event newEvent = new Event(1, 0, 0, 1, 0);
         assertEquals(50, newEvent.getEntertainmentCost());
+    }
+
+    @Test
+    public void newEventObjectCreatedCorrectWithAllValues() throws Exception {
+        Event newEvent = new Event(1, 1, 1, 1, 0);
+        assertEquals(67, newEvent.giveEstimate());
     }
 //    @Test
 //    public void newGuest_returnDinnerChoice() throws Exception {

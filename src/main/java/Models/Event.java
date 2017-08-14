@@ -8,10 +8,10 @@ import java.util.List;
 public class Event {
 
     private int mGuests;
-    private Integer mDinnerMenu;
-    private Integer mLibations;
-    private Integer mEntertainment;
-    private Integer mDiscount;
+    private int mDinnerMenu;
+    private int mLibations;
+    private int mEntertainment;
+    private int mDiscount;
 
 
     Map<Integer, Integer> dinnerCost = new HashMap();
@@ -21,7 +21,7 @@ public class Event {
 
 
 
-    public Event(Integer mGuests, Integer mDinnerMenu, Integer mLibations, Integer mEntertainment){
+    public Event(int mGuests, int mDinnerMenu, int mLibations, int mEntertainment, int mDiscount){
         this.mGuests = mGuests;
         this.mDinnerMenu = mDinnerMenu;
         this.mLibations = mLibations;
