@@ -43,8 +43,8 @@ public class EventTest {
 
     @Test
     public void newEventObjectInstantiatesWithAllValues_Discount() throws Exception {
-        Event newEvent = new Event(1, 1, 1, 1, 1);
-        assertEquals(17, newEvent.giveEstimate());
+        Event newEvent = new Event(10, 1, 1, 1, 1);
+        assertEquals(170, newEvent.giveEstimate());
     }
 
     @Test

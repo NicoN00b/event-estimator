@@ -42,7 +42,7 @@ public class Event {
 
     public int getDiscountCode() {
 
-        if (mGuests > 10) {
+        if (mGuests >= 10) {
             return discountCode.get(mDiscount);
         } else {
             return 0;
